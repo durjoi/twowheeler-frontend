@@ -57,7 +57,7 @@ const Login = () => {
 
                     </form>
 
-                    <p>New to OTG? <Link to="/register">Create an Account</Link></p>
+                    <p>New to 2Wheelers? <Link to="/register">Create an Account</Link></p>
                 </div>
             </div>
 

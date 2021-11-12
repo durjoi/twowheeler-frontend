@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
     const {user, logOut} = useAuth();
@@ -9,7 +9,7 @@ const Header = () => {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-                    <NavLink className="navbar-brand" to="/">On The Go.</NavLink>
+                    <NavLink className="navbar-brand" to="/">2Wheelers.</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>

@@ -1,0 +1,46 @@
+.banner {
+    height: 600px;
+    background-image: url('../../../../banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+
+.banner::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 100;
+    background: #000;
+    opacity: 0.5;
+}
+
+.banner_content {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.banner_content h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.banner_content h1 span {
+    
+    color: orange;
+}
+
+.banner_content p {
+    font-size: 18px;
+    font-weight: 500;
+}

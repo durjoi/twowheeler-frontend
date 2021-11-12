@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword,  updateProfile, signOut } from "firebase/auth";
 import initializeFirebase from '../Firebase/firebase.init';
+import axios from 'axios';
 
 initializeFirebase();
 
@@ -17,6 +18,16 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 // const user = userCredential.user;
+
+                axios.post('http://localhost:3005/users', {
+                        displayName: name,
+                        email: email
+                    })
+                    .then((response) => {
+                        if(response.statusText === 'OK' ) {
+                            alert('Account Created Successfully');
+                        }
+                    });
 
                 updateProfile(auth.currentUser, {
                     displayName: name

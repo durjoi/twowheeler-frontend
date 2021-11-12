@@ -1,13 +1,10 @@
 import React from 'react';
-import useEvent from '../../Hooks/useEvent';
-import EventItem from '../../Components/EventItem/EventItem';
 import './Home.css';
 import Banner from './Components/Banner/Banner';
 import BicycleSection from './Components/BicycleSection/BicycleSection';
 import ReviewSection from './Components/ReviewSection/ReviewSection';
 
 const Home = () => {
-    const { events, loading } = useEvent();
     return (
         <div>
 

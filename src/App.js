@@ -2,11 +2,11 @@ import './App.css';
 import AuthProvider from './Context/AuthProvider';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Footer from './Components/Layouts/Footer/Footer';
-import Header from './Components/Layouts/Header/Header';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Header from './Layouts/Header/Header';
+import Footer from './Layouts/Footer/Footer';
 
 function App() {
   return (
