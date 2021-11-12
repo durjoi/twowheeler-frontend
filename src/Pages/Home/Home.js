@@ -1,13 +1,20 @@
 import React from 'react';
-import useEvent from '../../../Hooks/useEvent';
-import EventItem from '../../EventItem/EventItem';
+import useEvent from '../../Hooks/useEvent';
+import EventItem from '../../Components/EventItem/EventItem';
 import './Home.css';
+import Banner from './Components/Banner/Banner';
+import BicycleSection from './Components/BicycleSection/BicycleSection';
+import ReviewSection from './Components/ReviewSection/ReviewSection';
 
 const Home = () => {
     const { events, loading } = useEvent();
     return (
         <div>
-            <section className="banner">
+
+            <Banner></Banner>
+            <BicycleSection></BicycleSection>
+            <ReviewSection></ReviewSection>
+            {/* <section className="banner">
                 <div className="container h-100">
                     <div className="row h-100">
                         <div className="col-md-12 d-flex justify-content-center align-items-center">
@@ -19,7 +26,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            {/* <section>
+            <section>
                 <div className="events_header">
                     <div className="container h-100">
                         <div className="row h-100">
@@ -37,7 +44,7 @@ const Home = () => {
                     }
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             <section className="upcomming-events section-padding">
                 <div className="container">
@@ -137,7 +144,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
 
