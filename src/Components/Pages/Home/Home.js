@@ -1,6 +1,6 @@
 import React from 'react';
-import useEvent from '../../Hooks/useEvent';
-import EventItem from '../EventItem/EventItem';
+import useEvent from '../../../Hooks/useEvent';
+import EventItem from '../../EventItem/EventItem';
 import './Home.css';
 
 const Home = () => {

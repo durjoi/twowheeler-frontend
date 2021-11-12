@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
-const Register = () => {
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
-    const {signUpUsingEmail} = useAuth();
+const Login = () => {
 
+    const { signInUsingEmail} = useAuth();
+    
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-
     const location = useLocation();
+    const history = useHistory()
 
     const redirect_uri = location.state?.from || '/';
-
+    
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        signUpUsingEmail(email, password, name);
+        signInUsingEmail(email, password)
+        .then((userCredential) => {
+            // Signed in 
+            history.push(redirect_uri);
+            // ...
+        }).catch((error) => {
+            console.log(error);
+        });
+
         setEmail('');
         setPassword('');
-        setName('');
     }
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-    }
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
     }
 
     const handlePasswordChange = (e) => {
@@ -38,12 +41,8 @@ const Register = () => {
         <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
             <div className="card booking_card">
                 <div className="card-body">
-                    <h5 className="card-title text-center">Register</h5>
+                    <h5 className="card-title text-center">Login</h5>
                     <form onSubmit={handleFormSubmit} className="text-left">
-                    <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleNameChange} value={name} required/>
-                        </div>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleEmailChange} value={email} required/>
@@ -57,7 +56,7 @@ const Register = () => {
 
                     </form>
 
-                    <p>Already have an account? <Link to="/login">Login</Link></p>
+                    <p>New to OTG? <Link to="/register">Create an Account</Link></p>
                 </div>
             </div>
 
@@ -65,4 +64,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

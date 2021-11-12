@@ -1,6 +1,6 @@
 .banner {
     height: 600px;
-    background-image: url('../../banner1.jpg');
+    background-image: url('../../../banner1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,7 +51,7 @@
 
 .section-break {
     /* height: 00px; */
-    background: url('../../section-break.webp');
+    background: url('../../../section-break.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
