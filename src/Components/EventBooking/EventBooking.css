@@ -1,0 +1,16 @@
+.booking_card {
+    width: 30%;
+}
+
+.booking {
+    height: 100vh;
+}
+
+@media only screen and (max-width: 900px) {
+    .booking_card {
+        width: 100%;
+    }
+    .booking {
+        height: 100%;
+    }
+}

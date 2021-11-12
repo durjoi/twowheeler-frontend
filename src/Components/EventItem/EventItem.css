@@ -1,0 +1,44 @@
+.event_item {
+    position: relative;
+    z-index: 1;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.event_item::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    position: absolute;
+    z-index: 10;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+.event_item_content {
+    position: absolute;
+    z-index: 999;
+    color: #fff;
+    font-weight: 700;
+    left: 20px;
+    bottom: 10px;
+}
+
+.event_item_content p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+
+.event_item_booking_btn {
+    text-decoration: none;
+    color: orange;
+}
+
+.reset-link {
+    text-decoration: none;
+}

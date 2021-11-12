@@ -1,0 +1,237 @@
+.banner {
+    height: 600px;
+    background-image: url('../../banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.bg-orange {
+    background: orange;
+}
+
+.banner::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 100;
+    background: #000;
+    opacity: 0.5;
+}
+
+.banner_content {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.banner_content h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.banner_content h1 span {
+    
+    color: orange;
+}
+
+.banner_content p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.section-break {
+    /* height: 00px; */
+    background: url('../../section-break.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    z-index: -1;
+}
+
+.section-break::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background: #000;
+    opacity: 0.3;
+}
+
+.section-break-item {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+}
+
+.section-break-item-logo {
+    font-size: 48px;
+    color: orange;
+    margin-bottom: 20px;
+}
+
+.section-break-item-title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+
+
+.upcomming-events {
+    background: #F7FAFD;
+}
+
+.upcomming-events-item {
+    border: none!important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.upcomming-events-thumb {
+    position: relative;
+}
+
+.upcomming-events-price {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: none;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    background: #1EC6B6;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.upcomming-events-item-title>a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.upcomming-events-item:hover {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+}
+
+.upcomming-events-item:hover .upcomming-events-item-title>a {
+    color: #f3712d;
+}
+
+.upcomming-events-item:hover .upcomming-events-price {
+    background: #f3712d;
+}
+
+.section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.upcomming-events-item-seats {
+    font-size: 14px;
+}
+
+.upcomming-events-item-seats>span {
+    color: #f3712d;
+}
+
+.upcomming-events-item-time {
+    font-size: 14px;
+}
+
+.events-btn {
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    background: #f3712d;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.events-btn:hover {
+    color: #fff;
+    background: #1EC6B6;
+    transition: 0.3s;
+}
+
+/*==========================
+Contact Us CSS
+===========================*/
+
+.contact-us {
+    min-height: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-us-title {
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-us-form textarea {
+    color: #727272;
+}
+
+.contact-us-address {
+    padding-top: 60px;
+    padding-left: 30px;
+}
+
+.contact-us-item {
+    margin-bottom: 10px;
+}
+
+.contact-us-item i {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #797979;
+}
+
+.contact-us-item p {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.contact-us-item span {
+    font-size: 16px;
+    color: #797979;
+}
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .banner_content h1 {
+        font-family: 'Nothing You Could Do', cursive;
+        font-weight: 700;
+        font-size: 40px;
+    }
+    .banner {
+        height: 100vh;
+    }
+}
