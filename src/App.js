@@ -44,9 +44,9 @@ function App() {
               <OrderSuccess></OrderSuccess>
             </Route>
 
-            <Route exact path='/orders/:bicycle_id'>
+            <PrivateRoute exact path='/orders/:bicycle_id'>
               <Order></Order>
-            </Route>
+            </PrivateRoute>
           </Switch>
           </main>
         </BrowserRouter>

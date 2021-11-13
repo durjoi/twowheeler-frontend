@@ -3,19 +3,6 @@
     background: orange;
 }
 
-
-.section-break {
-    /* height: 00px; */
-    background: url('../../section-break.webp');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    z-index: -1;
-}
-
 .section-break::after {
     content: '';
     position: absolute;
