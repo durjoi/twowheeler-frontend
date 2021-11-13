@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import Header from '../../Layouts/Header/Header';
 const Register = () => {
 
     const {signUpUsingEmail} = useAuth();
@@ -34,8 +35,9 @@ const Register = () => {
     }
 
     return (
-        
-        <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+        <>
+            <Header></Header>
+            <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
             <div className="card booking_card">
                 <div className="card-body">
                     <h5 className="card-title text-center">Register</h5>
@@ -62,6 +64,8 @@ const Register = () => {
             </div>
 
         </div>
+        </>
+        
     );
 };
 

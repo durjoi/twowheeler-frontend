@@ -4,7 +4,7 @@ import useAuth from '../../../../Hooks/useAuth';
 
 const UserLink = () => {
     let { url } = useRouteMatch();
-    const { user, logOut } = useAuth();
+    const { logOut } = useAuth();
     return (
         <ul>
                  <li>

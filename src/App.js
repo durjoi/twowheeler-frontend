@@ -5,7 +5,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Header from './Layouts/Header/Header';
 import Footer from './Layouts/Footer/Footer';
 import Explore from './Pages/Explore/Explore';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -18,7 +17,6 @@ function App() {
     <div className="">
       <AuthProvider>
         <BrowserRouter>
-        <Header></Header>
         <main>
           <Switch>
             <Route exact path='/'>

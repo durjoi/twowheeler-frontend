@@ -3,11 +3,13 @@ import './Home.css';
 import Banner from './Components/Banner/Banner';
 import BicycleSection from './Components/BicycleSection/BicycleSection';
 import ReviewSection from './Components/ReviewSection/ReviewSection';
+import Header from '../../Layouts/Header/Header';
+
 
 const Home = () => {
     return (
         <div>
-
+            <Header></Header>
             <Banner></Banner>
             <BicycleSection></BicycleSection>
             <ReviewSection></ReviewSection>

@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from '../../Layouts/Header/Header';
 
 const Explore = () => {
     return (
-        <div>
-            This is Explore Page
-        </div>
+        <>
+            <Header></Header>
+        </>
     );
 };
 

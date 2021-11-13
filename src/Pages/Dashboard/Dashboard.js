@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Switch, useRouteMatch } from 'react-router-dom';
 import ManageAdmin from './Components/ManageAdmin/ManageAdmin';
 import ManageOrder from './Components/ManageOrder/ManageOrder';
 import Sidebar from './Shared/Sidebar/Sidebar';
