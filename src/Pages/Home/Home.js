@@ -4,6 +4,8 @@ import Banner from './Components/Banner/Banner';
 import BicycleSection from './Components/BicycleSection/BicycleSection';
 import ReviewSection from './Components/ReviewSection/ReviewSection';
 import Header from '../../Layouts/Header/Header';
+import PromotionalSection from './Components/PromotionalSection/PromotionalSection';
+import Footer from '../../Layouts/Footer/Footer';
 
 
 const Home = () => {
@@ -13,6 +15,8 @@ const Home = () => {
             <Banner></Banner>
             <BicycleSection></BicycleSection>
             <ReviewSection></ReviewSection>
+            <PromotionalSection></PromotionalSection>
+            <Footer></Footer>
             {/* <section className="banner">
                 <div className="container h-100">
                     <div className="row h-100">

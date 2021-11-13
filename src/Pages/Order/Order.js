@@ -46,7 +46,7 @@ const Order = () => {
         <div className="d-flex justify-content-center align-items-center booking">
             <div className="card booking_card">
                 <div className="card-body text-left">
-                    <h5 className="card-title text-center">Book an bicycle</h5>
+                    <h5 className="card-title text-center">Order a bicycle</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="text-left">
                         <div className="mb-3">
                             <label for="exampleFormControlInput1" className="form-label">bicycle Title</label>

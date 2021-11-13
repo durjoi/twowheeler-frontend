@@ -1,27 +1,26 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, NavLink, useRouteMatch } from 'react-router-dom';
 
 const AdminLink = () => {
     let { url } = useRouteMatch();
     return (
-        <ul>
-                 <li>
-                     <Link to={`${url}/admin`}>Admin</Link>
-                     </li>
-                
-
-                <li>
-                    <Link to={`${url}/bicycle`}>Bicycle</Link>
-                </li>   
-
-                <li>
-                    <Link to={`${url}/bicycle/add`}>Add Bicycle</Link>
-                </li>
-
-                <li>
-                    <Link to={`${url}/order`}>Order</Link>
-                </li>
+        <>
+        <NavLink className="navbar-brand" to="/">2Wheelers.</NavLink>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <NavLink className='nav-link' to={`${url}/admin`}>Admin</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink className='nav-link' to={`${url}/bicycle`}>Bicycle</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink className='nav-link' to={`${url}/bicycle/add`}>Add Bicycle</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink className='nav-link' to={`${url}/order`}>Order</NavLink>
+            </li>
         </ul>
+        </>
     );
 };
 

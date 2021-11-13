@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import Footer from '../../Layouts/Footer/Footer';
 import Header from '../../Layouts/Header/Header';
 
 
@@ -64,6 +65,8 @@ const Login = () => {
             </div>
 
         </div>
+
+        <Footer></Footer>
         </>
         
     );

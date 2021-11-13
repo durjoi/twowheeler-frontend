@@ -5,7 +5,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Footer from './Layouts/Footer/Footer';
 import Explore from './Pages/Explore/Explore';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -50,7 +49,6 @@ function App() {
             </Route>
           </Switch>
           </main>
-          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

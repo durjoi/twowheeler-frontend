@@ -30,7 +30,7 @@ const MyOrders = () => {
                 <div className="container h-100">
                     <div className="row h-100">
                         <div className="col-md-12 text-center d-flex justify-content-center align-items-center">
-                            <h2>All Order</h2>
+                            <h2>My Orders</h2>
                         </div>
                     </div>
                 </div>

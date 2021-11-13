@@ -16,7 +16,7 @@ const BicycleSection = () => {
 
     return (
         <section>
-                <div className="bicycles_header">
+                <div className="bicycles_header pt-5 pb-5">
                     <div className="container h-100">
                         <div className="row h-100">
                             <div className="col-md-12 text-center d-flex justify-content-center align-items-center">

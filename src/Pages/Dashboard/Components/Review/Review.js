@@ -16,8 +16,8 @@ const Review = () => {
     }
 
     return (
-        <div className="booking d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-            <div className="card booking_card" >
+        <div className="booking d-flex" style={{ height: '70vh' }}>
+            <div className="card booking_card w-100" >
                 <div className="card-body text-left">
                     <h5 className="card-title text-center">Add New Review</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="text-left">

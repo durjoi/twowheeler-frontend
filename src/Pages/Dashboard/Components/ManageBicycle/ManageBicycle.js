@@ -26,8 +26,19 @@ const ManageBicycle = () => {
     }
 
     return (
-        <div className="container" style={{ "height" : "70vh" }}>
+        <section className="">
+            <div className="events_header">
+                <div className="container h-100">
+                    <div className="row h-100">
+                        <div className="col-md-12 text-center d-flex justify-content-center align-items-center">
+                            <h2>All Bicycles</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container" style={{ "height" : "70vh" }}>
                 <div className="row">
+                
                     <div className="col-md-12 " style={{ "overflowX":'auto' }}>
                     <table className="table">
                         <thead className="thead-dark">
@@ -61,6 +72,8 @@ const ManageBicycle = () => {
                     </div> 
                 </div>
             </div>
+        </section>
+        
     );
 };
 

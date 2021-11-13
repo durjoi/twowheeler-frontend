@@ -16,45 +16,52 @@ const Dashboard = () => {
     const {isAdmin} = useAuth();
 
     return (
-        <div>
-                <div>
-                <Sidebar></Sidebar>
+        <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-2" style={{ margin: '0px', padding: '0px' }}>
+                        <Sidebar></Sidebar>
+                    </div>
 
-                    <Switch>
-                        <PrivateRoute exact path={path}>
-                            {
-                                isAdmin ? <ManageOrder></ManageOrder> : <MyOrders></MyOrders>
-                            }
-                            
-                        </PrivateRoute>
-                        <PrivateRoute exact path={`${path}/admin`}>
-                            <ManageAdmin></ManageAdmin>
-                        </PrivateRoute>
+                    <div className="col-md-10 p-5">
 
-                        <PrivateRoute exact path={`${path}/pay`}>
-                            <Pay></Pay>
-                        </PrivateRoute>
+                        <Switch>
+                            <PrivateRoute exact path={path}>
+                                {
+                                    isAdmin ? <ManageOrder></ManageOrder> : <MyOrders></MyOrders>
+                                }
+                                
+                            </PrivateRoute>
+                            <PrivateRoute exact path={`${path}/admin`}>
+                                <ManageAdmin></ManageAdmin>
+                            </PrivateRoute>
 
-                        <PrivateRoute exact path={`${path}/review`}>
-                            <Review></Review>
-                        </PrivateRoute>
+                            <PrivateRoute exact path={`${path}/pay`}>
+                                <Pay></Pay>
+                            </PrivateRoute>
 
-                        <PrivateRoute exact path={`${path}/my-orders/`}>
-                            <MyOrders></MyOrders>
-                        </PrivateRoute>
+                            <PrivateRoute exact path={`${path}/review`}>
+                                <Review></Review>
+                            </PrivateRoute>
 
-                        <PrivateRoute exact path={`${path}/bicycle/add`}>
-                            <AddBicycle></AddBicycle>
-                        </PrivateRoute>
+                            <PrivateRoute exact path={`${path}/my-orders/`}>
+                                <MyOrders></MyOrders>
+                            </PrivateRoute>
 
-                        <PrivateRoute exact path={`${path}/bicycle`}>
-                            <ManageBicycle></ManageBicycle>
-                        </PrivateRoute>
+                            <PrivateRoute exact path={`${path}/bicycle/add`}>
+                                <AddBicycle></AddBicycle>
+                            </PrivateRoute>
 
-                        <PrivateRoute exact path={`${path}/order`}>
-                            <ManageOrder></ManageOrder>
-                        </PrivateRoute>
-                    </Switch>
+                            <PrivateRoute exact path={`${path}/bicycle`}>
+                                <ManageBicycle></ManageBicycle>
+                            </PrivateRoute>
+
+                            <PrivateRoute exact path={`${path}/order`}>
+                                <ManageOrder></ManageOrder>
+                            </PrivateRoute>
+                        </Switch>
+                    </div>
+                
+
                 </div>
         </div>
     );

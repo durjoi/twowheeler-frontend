@@ -8,8 +8,8 @@ const Footer = () => {
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         <div className="col-md-6">
-                            <h2>On The Go</h2>
-                            <p>To the world of an incredible vacation.</p>
+                            <h2>2Wheelers</h2>
+                            <p>Ride Two Wheel</p>
                         </div>
                         <div className="col-md-6 text-end">
                         <div className="row g-3 align-items-center">
@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         <div className="col-md-12 text-center">
-                            copyright @ 2021 - Alright Reserved by OTG
+                            copyright @ 2021 - Alright Reserved by 2wheelers
                         </div>    
                     </div>            
                 </div>
