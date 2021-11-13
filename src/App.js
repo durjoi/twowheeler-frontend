@@ -10,6 +10,8 @@ import Footer from './Layouts/Footer/Footer';
 import Explore from './Pages/Explore/Explore';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Order from './Pages/Order/Order';
+import OrderSuccess from './Pages/OrderSuccess/OrderSuccess';
 
 function App() {
   return (
@@ -37,6 +39,16 @@ function App() {
 
             <Route exact path='/register'>
               <Register></Register>
+            </Route>
+
+            
+
+            <Route exact path='/orders/success'>
+              <OrderSuccess></OrderSuccess>
+            </Route>
+
+            <Route exact path='/orders/:bicycle_id'>
+              <Order></Order>
             </Route>
           </Switch>
           </main>
