@@ -7,7 +7,7 @@ const ManageBicycle = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:3005/bicycles').then((response) => {
+        axios.get('https://desolate-island-53501.herokuapp.com/bicycles').then((response) => {
             setBicycles(response.data);
             setLoading(false)
         });
@@ -16,7 +16,7 @@ const ManageBicycle = () => {
     const handleDelete = (event_id) => {
         const confirm = window.confirm("Want to Delete this Event?");
         if(confirm) {
-            axios.delete(`http://localhost:3005/bicycles/${event_id}`)
+            axios.delete(`https://desolate-island-53501.herokuapp.com/bicycles/${event_id}`)
                 .then(() => {
                     setBicycles([...bicycles.filter(b => b._id !== event_id)]);
                     alert("Event deleted!");

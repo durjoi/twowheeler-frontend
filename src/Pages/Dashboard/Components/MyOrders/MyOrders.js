@@ -7,7 +7,7 @@ const MyOrders = () => {
     const {user} = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:3005/orders/${user.uid}`).then((response) => {
+        axios.get(`https://desolate-island-53501.herokuapp.com/orders/${user.uid}`).then((response) => {
             setorders(response.data);
         });
     },[user])
@@ -15,7 +15,7 @@ const MyOrders = () => {
     const handleDelete = (booking_id) => {
         const confirm = window.confirm("Want to Cancel this Booking?");
         if(confirm) {
-            axios.delete(`http://localhost:3005/orders/${booking_id}`)
+            axios.delete(`https://desolate-island-53501.herokuapp.com/orders/${booking_id}`)
                 .then(() => {
                     setorders([...orders.filter(b => b._id !== booking_id)]);
                     alert("Booking deleted!");

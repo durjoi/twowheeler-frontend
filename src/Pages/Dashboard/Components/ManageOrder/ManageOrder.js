@@ -6,7 +6,7 @@ const ManageOrder = () => {
     const [count , setCount] = useState(0);
 
     useEffect(() => {
-        axios.get('http://localhost:3005/orders').then((response) => {
+        axios.get('https://desolate-island-53501.herokuapp.com/orders').then((response) => {
             setorders(response.data);
         });
     },[count])
@@ -14,7 +14,7 @@ const ManageOrder = () => {
     const handleDelete = (order_id) => {
         const confirm = window.confirm("Want to Delete this Order?");
         if(confirm) {
-            axios.delete(`http://localhost:3005/orders/${order_id}`)
+            axios.delete(`https://desolate-island-53501.herokuapp.com/orders/${order_id}`)
                 .then(() => {
                     setorders([...orders.filter(b => b._id !== order_id)]);
                     alert("Order deleted!");
@@ -25,7 +25,7 @@ const ManageOrder = () => {
 
     const handleConfirm = (order_id) => {
         
-        axios.put(`http://localhost:3005/orders/${order_id}?status=Shipped`)
+        axios.put(`https://desolate-island-53501.herokuapp.com/orders/${order_id}?status=Shipped`)
             .then(() => {
                 alert("Order Shipped!");
                 // const updatedBooking = orders.filter(b => b._id === order_id);

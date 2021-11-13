@@ -9,7 +9,7 @@ const Explore = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:3005/bicycles').then((response) => {
+        axios.get('https://desolate-island-53501.herokuapp.com/bicycles').then((response) => {
             setBicycles(response.data);
             setLoading(false)
         });

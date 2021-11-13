@@ -6,7 +6,7 @@ const AddBicycle = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
-        axios.post('http://localhost:3005/bicycles', data)
+        axios.post('https://desolate-island-53501.herokuapp.com/bicycles', data)
         .then((response) => {
             if(response.statusText === 'OK' ) {
                 alert('Document inserted successfully');

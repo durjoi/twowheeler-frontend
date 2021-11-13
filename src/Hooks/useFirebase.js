@@ -20,7 +20,7 @@ const useFirebase = () => {
                 // Signed in 
                 // const user = userCredential.user;
 
-                axios.post('http://localhost:3005/users', {
+                axios.post('https://desolate-island-53501.herokuapp.com/users', {
                         displayName: name,
                         email: email
                     })
@@ -54,7 +54,7 @@ const useFirebase = () => {
             if (user) {
                 setUser(user)
 
-                axios.get(`http://localhost:3005/users?email=${user.email}`).then((response) => {
+                axios.get(`https://desolate-island-53501.herokuapp.com/users?email=${user.email}`).then((response) => {
                     if(response?.data[0]?.role === 'Admin') {
                         setIsAdmin(true);
                     }

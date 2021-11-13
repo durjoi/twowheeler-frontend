@@ -8,7 +8,7 @@ const ReviewSection = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3005/reviews').then((response) => {
+        axios.get('https://desolate-island-53501.herokuapp.com/reviews').then((response) => {
             setReviews(response.data);
         });
     }, []);

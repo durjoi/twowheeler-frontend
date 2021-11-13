@@ -7,7 +7,7 @@ const BicycleSection = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:3005/bicycles?limit=6').then((response) => {
+        axios.get('https://desolate-island-53501.herokuapp.com/bicycles?limit=6').then((response) => {
             setBicycles(response.data);
             setLoading(false)
         });

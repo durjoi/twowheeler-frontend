@@ -19,7 +19,7 @@ const Order = () => {
         data.price = bicycle.price;
         data.status = "Pending";
 
-        axios.post('http://localhost:3005/orders', data)
+        axios.post('https://desolate-island-53501.herokuapp.com/orders', data)
         .then((response) => {
             if(response.statusText === 'OK' ) {
                 alert('Order Confirmed');
@@ -32,7 +32,7 @@ const Order = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:3005/bicycles/${bicycle_id}`)
+        axios.get(`https://desolate-island-53501.herokuapp.com/bicycles/${bicycle_id}`)
         .then((response) => {
             if(response.statusText === 'OK' ) {
                 setbicycle(response.data[0]);
