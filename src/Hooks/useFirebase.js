@@ -8,6 +8,7 @@ initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const auth = getAuth();
 
@@ -52,6 +53,14 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+
+                axios.get(`http://localhost:3005/users?email=${user.email}`).then((response) => {
+                    if(response?.data[0]?.role === 'Admin') {
+                        setIsAdmin(true);
+                    }
+                    setLoading(false)
+                });
+
             } else {
 
             };
@@ -65,12 +74,13 @@ const useFirebase = () => {
                 setUser({});
             })
             .finally(() => {
+                setIsAdmin(false);
                 setLoading(false);
             })
     }
 
 
-    return { user, signInUsingGoogle, signUpUsingEmail, signInUsingEmail, logOut, loading }
+    return { user, signInUsingGoogle, signUpUsingEmail, signInUsingEmail, logOut, loading, isAdmin }
 
 
 };

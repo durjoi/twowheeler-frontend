@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import ManageAdmin from './Components/ManageAdmin/ManageAdmin';
-import ManageBicycle from './Components/ManageBicycle/ManageBicycle';
 import ManageOrder from './Components/ManageOrder/ManageOrder';
 import Sidebar from './Shared/Sidebar/Sidebar';
+import AddBicycle from './Components/AddBicycle/AddBicycle';
+import ManageBicycle from './Components/ManageBicycle/ManageBicycle';
 
 const Dashboard = () => {
     let { path } = useRouteMatch();
@@ -19,6 +20,10 @@ const Dashboard = () => {
                         </Route>
                         <Route exact path={`${path}/admin`}>
                             <ManageAdmin></ManageAdmin>
+                        </Route>
+
+                        <Route exact path={`${path}/bicycle/add`}>
+                            <AddBicycle></AddBicycle>
                         </Route>
 
                         <Route exact path={`${path}/bicycle`}>

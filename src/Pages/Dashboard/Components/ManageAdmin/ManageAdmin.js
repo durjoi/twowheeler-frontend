@@ -23,7 +23,7 @@ const ManageAdmin = () => {
                     <h5 className="card-title text-center">Create New Admin</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="text-left">
                         <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">User Email</label>
+                            <label className="form-label">User Email</label>
                             <input type="email" className="form-control" {...register("email")} required/>
                         </div>
                         

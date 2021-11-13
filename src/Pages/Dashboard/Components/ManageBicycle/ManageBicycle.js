@@ -1,53 +1,66 @@
 import axios from 'axios';
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
 
 const ManageBicycle = () => {
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = (data, e) => {
-        axios.post('http://localhost:3005/bicycles', data)
-        .then((response) => {
-            if(response.statusText === 'OK' ) {
-                alert('Document inserted successfully');
-            }
-            e.target.reset();
-        });
+    const [bicycles, setBicycles] = useState({});
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        axios.get('http://localhost:3005/bicycles').then((response) => {
+            setBicycles(response.data);
+            setLoading(false)
+        });
+    }, []);
+
+    const handleDelete = (event_id) => {
+        const confirm = window.confirm("Want to Delete this Event?");
+        if(confirm) {
+            axios.delete(`http://localhost:3005/bicycles/${event_id}`)
+                .then(() => {
+                    setBicycles([...bicycles.filter(b => b._id !== event_id)]);
+                    alert("Event deleted!");
+            });
+        }
+        
     }
 
     return (
-        <div className="booking d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-            <div className="card booking_card" >
-                <div className="card-body text-left">
-                    <h5 className="card-title text-center">Add New Bicycle</h5>
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-left">
-                        <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">Title</label>
-                            <input type="text" className="form-control" {...register("title")} required/>
-                        </div>
-                        
-                        <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">Subtitle</label>
-                            <input type="text" className="form-control"  {...register("subtitle")} required/>
-                        </div>
-
-                        <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">Price</label>
-                            <input type="number" className="form-control" {...register("price")} required/>
-                        </div>
-
-                        <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">Image URL</label>
-                            <input type="text" className="form-control" {...register("img")} required/>
-                        </div>
-                        
-                        <input type="submit" value="Create"/>
-                    </form>
+        <div className="container" style={{ "height" : "70vh" }}>
+                <div className="row">
+                    <div className="col-md-12 " style={{ "overflowX":'auto' }}>
+                    <table className="table">
+                        <thead className="thead-dark">
+                            <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Subtitle</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            loading ? <tr>
+                                <td><p className="spinner-border text-warning m-auto"></p></td>
+                            </tr>  :
+                                bicycles.map(event => {
+                                    return (
+                                        <tr key={event._id}>
+                                            <td>{event.title}</td>
+                                            <td>{event.subtitle}</td>
+                                            <td>{event.price}</td>
+                                            <td>{event.img}</td>
+                                            <td><button onClick={() => handleDelete(event._id)}>Delete</button></td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                        </table>
+                    </div> 
                 </div>
             </div>
-
-        </div>
     );
 };
 
