@@ -7,6 +7,9 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Header from './Layouts/Header/Header';
 import Footer from './Layouts/Footer/Footer';
+import Explore from './Pages/Explore/Explore';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -19,6 +22,14 @@ function App() {
             <Route exact path='/'>
               <Home></Home>
             </Route>
+
+            <Route exact path='/explore'>
+              <Explore></Explore>
+            </Route>
+
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
 
             <Route exact path='/login'>
               <Login></Login>

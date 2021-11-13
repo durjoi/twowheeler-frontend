@@ -20,31 +20,11 @@ const Header = () => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink className='nav-link' exact to='/event'>Events</NavLink>
+                            <NavLink className='nav-link' exact to='/explore'>Explore</NavLink>
                         </li>
                         {
                             user.email &&  <li className="nav-item">
-                                <NavLink className='nav-link' exact to='/booking'>Booking Management</NavLink>
-                            </li>
-                        }
-
-{
-                            user.email &&  <li className="nav-item">
-                                <NavLink className='nav-link' exact to='/event/manage'>Event Management</NavLink>
-                            </li>
-                        }
-
-                        {
-                            user.email &&  <li className="nav-item">
-                                <NavLink className='nav-link' to='/event/create'>Add New Event</NavLink>
-                            </li>
-                        }
-                        
-
-                        
-                        {
-                            user.email &&  <li className="nav-item">
-                                <NavLink className='nav-link' exact to={`/booking/${user.uid}`}>My Bookings</NavLink>
+                                <NavLink className='nav-link' exact to='/dashboard'>Dashboard</NavLink>
                             </li>
                         }
                         {
