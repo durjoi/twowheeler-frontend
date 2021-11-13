@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 const Sidebar = () => {
-    let { path, url } = useRouteMatch();
+    let { url } = useRouteMatch();
     return (
         <div>
             <ul>
