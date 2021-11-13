@@ -5,9 +5,15 @@ import ManageOrder from './Components/ManageOrder/ManageOrder';
 import Sidebar from './Shared/Sidebar/Sidebar';
 import AddBicycle from './Components/AddBicycle/AddBicycle';
 import ManageBicycle from './Components/ManageBicycle/ManageBicycle';
+import useAuth from '../../Hooks/useAuth';
+import Pay from './Components/Pay/Pay';
+import MyOrders from './Components/MyOrders/MyOrders';
+import Review from './Components/Review/Review';
+import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 
 const Dashboard = () => {
     let { path } = useRouteMatch();
+    const {isAdmin} = useAuth();
 
     return (
         <div>
@@ -15,24 +21,39 @@ const Dashboard = () => {
                 <Sidebar></Sidebar>
 
                     <Switch>
-                        <Route exact path={path}>
-                            <h1>Dashboard</h1>
-                        </Route>
-                        <Route exact path={`${path}/admin`}>
+                        <PrivateRoute exact path={path}>
+                            {
+                                isAdmin ? <ManageOrder></ManageOrder> : <MyOrders></MyOrders>
+                            }
+                            
+                        </PrivateRoute>
+                        <PrivateRoute exact path={`${path}/admin`}>
                             <ManageAdmin></ManageAdmin>
-                        </Route>
+                        </PrivateRoute>
 
-                        <Route exact path={`${path}/bicycle/add`}>
+                        <PrivateRoute exact path={`${path}/pay`}>
+                            <Pay></Pay>
+                        </PrivateRoute>
+
+                        <PrivateRoute exact path={`${path}/review`}>
+                            <Review></Review>
+                        </PrivateRoute>
+
+                        <PrivateRoute exact path={`${path}/my-orders/`}>
+                            <MyOrders></MyOrders>
+                        </PrivateRoute>
+
+                        <PrivateRoute exact path={`${path}/bicycle/add`}>
                             <AddBicycle></AddBicycle>
-                        </Route>
+                        </PrivateRoute>
 
-                        <Route exact path={`${path}/bicycle`}>
+                        <PrivateRoute exact path={`${path}/bicycle`}>
                             <ManageBicycle></ManageBicycle>
-                        </Route>
+                        </PrivateRoute>
 
-                        <Route exact path={`${path}/order`}>
+                        <PrivateRoute exact path={`${path}/order`}>
                             <ManageOrder></ManageOrder>
-                        </Route>
+                        </PrivateRoute>
                     </Switch>
                 </div>
         </div>

@@ -1,36 +1,27 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import useAuth from '../../../../Hooks/useAuth';
 
-const ManageOrder = () => {
+const MyOrders = () => {
     const [orders, setorders] = useState([]);
-    const [count , setCount] = useState(0);
+    const {user} = useAuth();
 
     useEffect(() => {
-        axios.get('http://localhost:3005/orders').then((response) => {
+        axios.get(`http://localhost:3005/orders/${user.uid}`).then((response) => {
             setorders(response.data);
         });
-    },[count])
+    },[user])
 
-    const handleDelete = (order_id) => {
-        const confirm = window.confirm("Want to Delete this Order?");
+    const handleDelete = (booking_id) => {
+        const confirm = window.confirm("Want to Cancel this Booking?");
         if(confirm) {
-            axios.delete(`http://localhost:3005/orders/${order_id}`)
+            axios.delete(`http://localhost:3005/orders/${booking_id}`)
                 .then(() => {
-                    setorders([...orders.filter(b => b._id !== order_id)]);
-                    alert("Order deleted!");
+                    setorders([...orders.filter(b => b._id !== booking_id)]);
+                    alert("Booking deleted!");
             });
         }
-        
-    }
-
-    const handleConfirm = (order_id) => {
-        
-        axios.put(`http://localhost:3005/orders/${order_id}?status=Shipped`)
-            .then(() => {
-                alert("Order Shipped!");
-                // const updatedBooking = orders.filter(b => b._id === order_id);
-                setCount(count+1);
-        });
         
     }
 
@@ -64,21 +55,18 @@ const ManageOrder = () => {
                             </thead>
                             <tbody>
                                 {
-                                    orders.map(order => {
+                                    orders.map(booking => {
                                         return (
-                                            <tr key={order._id}>
-                                                <td>{order.name}</td>
-                                                <td>{order.email}</td>
-                                                <td>{order.phone}</td>
-                                                <td>{order.address}</td>
-                                                <td>{order.bicycle}</td>
-                                                <td>{order.price}</td>
-                                                <td>{order.status}</td>
+                                            <tr key={booking._id}>
+                                                <td>{booking.name}</td>
+                                                <td>{booking.email}</td>
+                                                <td>{booking.phone}</td>
+                                                <td>{booking.address}</td>
+                                                <td>{booking.bicycle}</td>
+                                                <td>{booking.price}</td>
+                                                <td>{booking.status}</td>
                                                 <td>
-                                                    <button onClick={() => handleDelete(order._id)}>Delete</button>
-                                                    {
-                                                        (order.status === 'Pending') ? <button onClick={() => handleConfirm(order._id)}>Shipped</button> : ''
-                                                    }
+                                                    <button onClick={() => handleDelete(booking._id)}>Cancel</button>
                                                 </td>
                                             </tr>
                                         )
@@ -94,4 +82,4 @@ const ManageOrder = () => {
     );
 };
 
-export default ManageOrder;
+export default MyOrders;

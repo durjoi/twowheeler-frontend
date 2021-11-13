@@ -1,34 +1,24 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
+import AdminLink from './AdminLink';
+import UserLink from './UserLink';
 
 const Sidebar = () => {
-    let { url } = useRouteMatch();
-    const {isAdmin} = useAuth();
+    const {isAdmin, isLoading} = useAuth();
+
+    if(isLoading) {
+        return (
+            <div className="pt-3 pb-3 text-center">
+              <p>Loading...</p>
+            </div>
+        );
+      }
 
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to={`${url}`}>Dashboard</Link>
-                </li>
-                {
-                        isAdmin && <li><Link to={`${url}/admin`}>Admin</Link></li>
-                    }
-                
-
-                <li>
-                    <Link to={`${url}/bicycle`}>Bicycle</Link>
-                </li>   
-
-                <li>
-                    <Link to={`${url}/bicycle/add`}>Add Bicycle</Link>
-                </li>
-
-                <li>
-                    <Link to={`${url}/order`}>Order</Link>
-                </li>
-            </ul>
+            {
+                isAdmin ? <AdminLink></AdminLink> : <UserLink></UserLink>
+            }
         </div>
     );
 };

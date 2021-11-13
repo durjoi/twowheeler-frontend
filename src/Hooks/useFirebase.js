@@ -64,7 +64,7 @@ const useFirebase = () => {
             } else {
 
             };
-            setLoading(false);
+            // setLoading(false);
         });
     }, [auth]);
 
